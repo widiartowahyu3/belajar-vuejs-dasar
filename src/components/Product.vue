@@ -9,14 +9,21 @@
     </select>
   </label>
   <div v-if="product">
-    <h1>Product</h1>
+    <!-- <h1>Product</h1>
     <p>Id: {{ product.id }}</p>
     <p>Name: {{ product.name }}</p>
-    <p>Price: {{ product.price }}</p>
+    <p>Price: {{ product.price }}</p> -->
+
+    <ProductDetail
+      :id="product.id"
+      :price="product.price"
+      :name="product.name"
+    />
   </div>
 </template>
 <script setup>
 import { onWatcherCleanup, ref, watch, watchEffect } from "vue";
+import ProductDetail from "./ProductDetail.vue";
 
 // const productId = ref(0);
 const productId = ref("product1");

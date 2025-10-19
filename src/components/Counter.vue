@@ -5,10 +5,10 @@
 <script setup>
 import { nextTick, ref } from "vue";
 
-const props = defineProps(["name"]);
+const props = defineProps(["name", "initialCount"]);
 
 let counter = ref({
-  count: 0,
+  count: Number(props.initialCount),
   nama: "wahyu",
 });
 async function increment() {
@@ -23,7 +23,6 @@ async function increment() {
   await nextTick();
   counter.value.count++;
   await nextTick();
-  counter.value.count++;
   counter.value.count++;
   counter.value.count++;
   counter.value.count++;
