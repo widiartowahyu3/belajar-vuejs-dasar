@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Counter {{ name }} : {{ counter }}</h1>
-    <button @click="buttonClick">Increment {{ name }}</button>
+    <button @click.stop="$emit('click', increment)">
+      Increment {{ name }}
+    </button>
   </div>
 </template>
 <script setup>
@@ -11,10 +13,9 @@ const { counter, name, increment } = defineProps({
   name: String,
   increment: Number,
 });
-const emits = defineEmits(["pencet"]);
 
-function buttonClick() {
-  emits("pencet", increment);
-}
+// defineOptions({
+//   inheritAttrs: false,
+// });
 </script>
 <style scoped></style>

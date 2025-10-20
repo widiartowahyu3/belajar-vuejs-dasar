@@ -6,13 +6,13 @@
     name="wahyu"
     :counter="counter"
     :increment="1"
-    @pencet="increment"
+    @click="increment"
   />
   <CounterStateless
     name="widiarto"
     :counter="counter"
     :increment="2"
-    @pencet="increment"
+    @click="increment"
   />
 </template>
 <script setup>
